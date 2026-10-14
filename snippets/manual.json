@@ -1,0 +1,15 @@
+{
+  "cpp.json化用マーカー": {
+    "prefix": "tmmarker",
+    "body": [
+      "// name: ",
+      "// prefix: ",
+      "// description: ",
+      "// cpp.json from here",
+      "",
+      "$0",
+      "",
+      "// cpp.json to here"
+    ]
+  }
+}
