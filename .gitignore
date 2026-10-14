@@ -1,0 +1,19 @@
+# C++ build artifacts
+*.exe
+*.o
+*.obj
+*.out
+*.a
+*.so
+*.dll
+
+# Build directories
+/build/
+/cmake-build-*/
+
+# Temporary files
+*.tmp
+*~
+
+# Local VSCode settings
+.vscode/
