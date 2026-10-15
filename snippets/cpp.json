@@ -1,0 +1,1007 @@
+{
+  "modの短縮入力": {
+    "prefix": "conmod",
+    "body": "constexpr int mod = ${1|998244353,1000000007,10007|};"
+  },
+  "INFの短縮入力": {
+    "prefix": "coninf",
+    "body": "constexpr int INF = ${1|1001001001,2002002002,1000000000|};"
+  },
+  "INFllの短縮入力": {
+    "prefix": "coninfll",
+    "body": "constexpr long long INF = ${1|1001001001001001001LL,4004004004004004004LL,1000000000000000000LL|};"
+  },
+  "long longの短縮入力": {
+    "prefix": "ll",
+    "body": "long long"
+  },
+  "unsigned long longの短縮入力": {
+    "prefix": "ull",
+    "body": "unsigned long long"
+  },
+  "priority_queue（小さい方から）の短縮入力": {
+    "prefix": "pqs",
+    "body": "priority_queue<${1|int,long long,double,string,pair<int\\,int>,pair<long long\\,long long>|},vector<${1}>,greater<${1}>> que;"
+  },
+  "priority_queue（大きい方から）の短縮入力": {
+    "prefix": "pql",
+    "body": "priority_queue<${1|int,long long,double,string,pair<int\\,int>,pair<long long\\,long long>|}> que;"
+  },
+  "pair<int,int>の短縮入力": {
+    "prefix": "pii",
+    "body": "pair<int,int>"
+  },
+  "pair<long long,long long>の短縮入力": {
+    "prefix": "pll",
+    "body": "pair<long long,long long>"
+  },
+  "tuple<int,int,int>の短縮入力": {
+    "prefix": "tupleii",
+    "body": "tuple<int,int,int$0>"
+  },
+  "get<0>()の短縮入力": {
+    "prefix": "get0",
+    "body": "get<0$0>()"
+  },
+  "vector<int>の短縮入力": {
+    "prefix": "vi",
+    "body": "vector<int>"
+  },
+  "vector<long long>の短縮入力": {
+    "prefix": "vll",
+    "body": "vector<long long>"
+  },
+  "vector<pair<int,int>>の短縮入力": {
+    "prefix": "vpii",
+    "body": "vector<pair<int,int>>"
+  },
+  "vector<pair<long long,long long>>の短縮入力": {
+    "prefix": "vpll",
+    "body": "vector<pair<long long,long long>>"
+  },
+  "vector<>の短縮入力": {
+    "prefix": "vec",
+    "body": "vector<$0>"
+  },
+  "vectorのbegin()とend()の短縮入力": {
+    "prefix": "vall",
+    "body": "${1:vec}.begin(),${1}.end()"
+  },
+  "vectorのrbegin()とrend()の短縮入力": {
+    "prefix": "vrall",
+    "body": "${1:vec}.rbegin(),${1}.rend()"
+  },
+  "vectorのsortの短縮入力": {
+    "prefix": "vsort",
+    "body": "sort(${1:vec}.begin(),${1}.end());"
+  },
+  "vectorのreverseの短縮入力": {
+    "prefix": "vreverse",
+    "body": "reverse(${1:vec}.begin(),${1}.end());"
+  },
+  "vectorのユニーク化の短縮入力": {
+    "prefix": "vunique",
+    "body": [
+      "sort(${1:vec}.begin(),${1}.end());",
+      "${1}.erase(unique(${1}.begin(),${1}.end()),${1}.end());"
+    ]
+  },
+  "vectorの逆順sortの短縮入力": {
+    "prefix": "vrsort",
+    "body": "sort(${1:vec}.rbegin(),${1}.rend());"
+  },
+  "vectorのiotaの短縮入力": {
+    "prefix": "viota",
+    "body": "iota(${1:vec}.begin(),${1}.end(),0$0);"
+  },
+  "vectorの総和の短縮入力": {
+    "prefix": "vsum",
+    "body": [
+      "accumulate(${1:a}.begin(),${1}.end(),0LL);"
+    ]
+  },
+  "vectorの累積和の短縮入力": {
+    "prefix": "vpsum",
+    "body": [
+      "partial_sum(${1:a}.begin(),${1}.end(),${2:sum}.begin()+1);"
+    ]
+  },
+  "vectorの最大の短縮入力": {
+    "prefix": "vmax",
+    "body": [
+      "*max_element(${1:a}.begin(),${1}.end())"
+    ]
+  },
+  "vectorの最小の短縮入力": {
+    "prefix": "vmin",
+    "body": [
+      "*min_element(${1:a}.begin(),${1}.end())"
+    ]
+  },
+  "vectorの最大位置の短縮入力": {
+    "prefix": "vpmax",
+    "body": [
+      "max_element(${1:a}.begin(),${1}.end())-${1}.begin()"
+    ]
+  },
+  "vectorの最小位置の短縮入力": {
+    "prefix": "vpmin",
+    "body": [
+      "min_element(${1:a}.begin(),${1}.end())-${1}.begin()"
+    ]
+  },
+  "二次元vectorの短縮入力": {
+    "prefix": "vv",
+    "body": "vector<vector<${1|int,long long,double,bool,string,pair<int\\,int>,pair<long long\\,long long>|}>> ${2:a}"
+  },
+  "二次元vector（初期化入り）の短縮入力": {
+    "prefix": "vvi",
+    "body": "vector<vector<${1|int,long long,double,bool,string,pair<int\\,int>,pair<long long\\,long long>|}>> ${2:a}(${3:h},vector<${1}>(${4:w}));"
+  },
+  "三次元vectorの短縮入力": {
+    "prefix": "vvv",
+    "body": "vector<vector<vector<${1|int,long long,double,bool,string,pair<int\\,int>,pair<long long\\,long long>|}>>> ${2:a}"
+  },
+  "三次元vector（初期化入り）の短縮入力": {
+    "prefix": "vvvi",
+    "body": "vector<vector<vector<${1|int,long long,double,bool,string,pair<int\\,int>,pair<long long\\,long long>|}>>> ${2:a}(${3:h},vector<vector<${1}>>(${4:w},vector<${1}>(${5:d})));"
+  },
+  "forループの短縮入力1": {
+    "prefix": "fori",
+    "body": "for (int i=0; i<n; i++)"
+  },
+  "forループの短縮入力2": {
+    "prefix": "forir",
+    "body": "for (int i=n-1; i>=0; i--)"
+  },
+  "forループの短縮入力3": {
+    "prefix": "forj",
+    "body": "for (int j=0; j<m; j++)"
+  },
+  "emplace_back()の短縮入力3": {
+    "prefix": "eb",
+    "body": "emplace_back($0)"
+  },
+  "入出力高速化": {
+    "prefix": "iofast",
+    "body": [
+      "ios::sync_with_stdio(false);",
+      "cin.tie(nullptr);"
+    ]
+  },
+  "cpp.json化用マーカー": {
+    "prefix": "tmmarker",
+    "body": [
+      "// name: ",
+      "// prefix: ",
+      "// description: ",
+      "// cpp.json from here",
+      "",
+      "$0",
+      "",
+      "// cpp.json to here"
+    ]
+  },
+  "AtCoderのテンプレート（通常用）": {
+    "prefix": "tmac",
+    "body": [
+      "#include <bits/stdc++.h>",
+      "#include <atcoder/all>",
+      "using namespace std;",
+      "using namespace atcoder;",
+      "",
+      "// ライブラリ https://github.com/wightou/library-public",
+      "",
+      "/////////////////// メイン ///////////////////",
+      "",
+      "int main () {",
+      "",
+      "  ios::sync_with_stdio(false);",
+      "  cin.tie(nullptr);",
+      "  ",
+      "  //////////////////// 入力 ////////////////////",
+      "",
+      "  int n;",
+      "  cin >> n;",
+      "",
+      "  vector<int> a(n);",
+      "  for (int i=0; i<n; i++) {",
+      "    cin >> a.at(i);",
+      "  }",
+      "",
+      "  //////////////// 出力変数定義 ////////////////",
+      "",
+      "  int result = 0;",
+      "",
+      "  //////////////////// 処理 ////////////////////",
+      "",
+      "  ",
+      "",
+      "  //////////////////// 出力 ////////////////////",
+      "",
+      "  cout << result << '\\n';",
+      "",
+      "  //////////////////// 終了 ////////////////////",
+      "",
+      "  return 0;",
+      "",
+      "}"
+    ],
+    "description": "AtCoderのテンプレート（通常用）"
+  },
+  "AtCoderのテンプレート（多種クエリ用）": {
+    "prefix": "tmacq",
+    "body": [
+      "#include <bits/stdc++.h>",
+      "#include <atcoder/all>",
+      "using namespace std;",
+      "using namespace atcoder;",
+      "",
+      "// ライブラリ https://github.com/wightou/library-public",
+      "",
+      "/////////////////// メイン ///////////////////",
+      "",
+      "int main () {",
+      "",
+      "  ios::sync_with_stdio(false);",
+      "  cin.tie(nullptr);",
+      "  ",
+      "  /////////////////// 前入力 ///////////////////",
+      "  ",
+      "  int q;",
+      "  cin >> q;",
+      "",
+      "  /////////////////// 前処理 ///////////////////",
+      "",
+      "  ",
+      "",
+      "  /////////////////// ループ ///////////////////",
+      "",
+      "  for (int loop=0; loop<q; loop++) {",
+      "    ",
+      "    int type;",
+      "    cin >> type;",
+      "    ",
+      "    if (type==1) {",
+      "",
+      "      int x;",
+      "      cin >> x;",
+      "      ",
+      "    } else if (type==2) {",
+      "",
+      "      int x;",
+      "      cin >> x;",
+      "",
+      "    }",
+      "",
+      "  }",
+      "",
+      "  /////////////////// 後処理 ///////////////////",
+      "",
+      "",
+      "",
+      "  //////////////////// 終了 ////////////////////",
+      "",
+      "  return 0;",
+      "",
+      "}"
+    ],
+    "description": "AtCoderのテンプレート（多種クエリ用）"
+  },
+  "AtCoderのテンプレート（マルチケース用）": {
+    "prefix": "tmacm",
+    "body": [
+      "#include <bits/stdc++.h>",
+      "#include <atcoder/all>",
+      "using namespace std;",
+      "using namespace atcoder;",
+      "",
+      "// ライブラリ https://github.com/wightou/library-public",
+      "",
+      "/////////////////// メイン ///////////////////",
+      "",
+      "int main () {",
+      "",
+      "  ios::sync_with_stdio(false);",
+      "  cin.tie(nullptr);",
+      "",
+      "  /////////////////// 前入力 ///////////////////",
+      "",
+      "  int q;",
+      "  cin >> q;",
+      "",
+      "  /////////////////// 前処理 ///////////////////",
+      "",
+      "",
+      "",
+      "  /////////////////// ループ ///////////////////",
+      "",
+      "  for (int loop=0; loop<q; loop++) {",
+      "",
+      "    //////////////////// 入力 ////////////////////",
+      "",
+      "    int n;",
+      "    cin >> n;",
+      "",
+      "    vector<int> a(n);",
+      "    for (int i=0; i<n; i++) {",
+      "      cin >> a.at(i);",
+      "    }",
+      "",
+      "    //////////////// 出力変数定義 ////////////////",
+      "",
+      "    int result = 0;",
+      "",
+      "    //////////////////// 処理 ////////////////////",
+      "",
+      "    ",
+      "",
+      "    //////////////////// 出力 ////////////////////",
+      "",
+      "    cout << result << '\\n';",
+      "",
+      "  }",
+      "",
+      "  /////////////////// 後処理 ///////////////////",
+      "",
+      "",
+      "",
+      "  //////////////////// 終了 ////////////////////",
+      "",
+      "  return 0;",
+      "",
+      "}"
+    ],
+    "description": "AtCoderのテンプレート（マルチケース・単種クエリ用）"
+  },
+  "Codeforcesのテンプレート": {
+    "prefix": "tmcf",
+    "body": [
+      "#include <bits/stdc++.h>",
+      "using namespace std;",
+      "",
+      "/////////////////// メイン ///////////////////",
+      "",
+      "int main () {",
+      "",
+      "  ios::sync_with_stdio(false);",
+      "  cin.tie(nullptr);",
+      "  ",
+      "  //////////////////// 入力 ////////////////////",
+      "",
+      "  int n;",
+      "  cin >> n;",
+      "",
+      "  vector<int> a(n);",
+      "  for (int i=0; i<n; i++) {",
+      "    cin >> a.at(i);",
+      "  }",
+      "",
+      "  //////////////// 出力変数定義 ////////////////",
+      "",
+      "  int result = 0;",
+      "",
+      "  //////////////////// 処理 ////////////////////",
+      "",
+      "  ",
+      "",
+      "  //////////////////// 出力 ////////////////////",
+      "",
+      "  cout << result << '\\n';",
+      "",
+      "  //////////////////// 終了 ////////////////////",
+      "",
+      "  return 0;",
+      "",
+      "}"
+    ],
+    "description": "Codeforcesなどのテンプレート\nACL非対応のところ全般用"
+  },
+  "Codeforcesのテンプレート（マルチケース用）": {
+    "prefix": "tmcfm",
+    "body": [
+      "#include <bits/stdc++.h>",
+      "using namespace std;",
+      "",
+      "/////////////////// メイン ///////////////////",
+      "",
+      "int main () {",
+      "",
+      "  ios::sync_with_stdio(false);",
+      "  cin.tie(nullptr);",
+      "",
+      "  /////////////////// 前入力 ///////////////////",
+      "",
+      "  int q;",
+      "  cin >> q;",
+      "",
+      "  /////////////////// 前処理 ///////////////////",
+      "",
+      "",
+      "",
+      "  /////////////////// ループ ///////////////////",
+      "",
+      "  for (int loop=0; loop<q; loop++) {",
+      "",
+      "    //////////////////// 入力 ////////////////////",
+      "",
+      "    int n;",
+      "    cin >> n;",
+      "",
+      "    vector<int> a(n);",
+      "    for (int i=0; i<n; i++) {",
+      "      cin >> a.at(i);",
+      "    }",
+      "",
+      "    //////////////// 出力変数定義 ////////////////",
+      "",
+      "    int result = 0;",
+      "",
+      "    //////////////////// 処理 ////////////////////",
+      "",
+      "    ",
+      "",
+      "    //////////////////// 出力 ////////////////////",
+      "",
+      "    cout << result << '\\n';",
+      "",
+      "  }",
+      "",
+      "  /////////////////// 後処理 ///////////////////",
+      "",
+      "",
+      "",
+      "  //////////////////// 終了 ////////////////////",
+      "",
+      "  return 0;",
+      "",
+      "}"
+    ],
+    "description": "Codeforcesなどのテンプレート（マルチケース用）\nACL非対応のところ全般用"
+  },
+  "ProjectEulerのテンプレート": {
+    "prefix": "tmpe",
+    "body": [
+      "#include <bits/stdc++.h>",
+      "using namespace std;",
+      "",
+      "/////////////////// メイン ///////////////////",
+      "",
+      "int main () {",
+      "",
+      "  //////////////////// 入力 ////////////////////",
+      "",
+      "  int n = 1000;",
+      "",
+      "  //////////////// 出力変数定義 ////////////////",
+      "",
+      "  int result = 0;",
+      "",
+      "  //////////////////// 処理 ////////////////////",
+      "",
+      "  ",
+      "",
+      "  //////////////////// 出力 ////////////////////",
+      "",
+      "  cout << result << endl;",
+      "",
+      "  //////////////////// 終了 ////////////////////",
+      "",
+      "  return 0;",
+      "",
+      "}"
+    ],
+    "description": "ProjectEulerのテンプレート"
+  },
+  "ライブラリ作成用のテンプレート": {
+    "prefix": "tmlib",
+    "body": [
+      "#include <bits/stdc++.h>",
+      "using namespace std;",
+      "",
+      "// ",
+      "// 引数：",
+      "// 返り値：",
+      "// 計算量：O( )",
+      "",
+      "",
+      "int main () {",
+      "",
+      "  int result = 0;",
+      "",
+      "  cout << result << '\\n';",
+      "",
+      "  return 0;",
+      "",
+      "}"
+    ],
+    "description": "ライブラリ作成用のテンプレート"
+  },
+  "int入力 1つ": {
+    "prefix": "inint",
+    "body": [
+      "  int ${1:n};",
+      "  cin >> ${1};"
+    ],
+    "description": "int入力 1つ"
+  },
+  "int入力 2つ": {
+    "prefix": "inint2",
+    "body": [
+      "  int ${1:a}, ${2:b};",
+      "  cin >> ${1} >> ${2};"
+    ],
+    "description": "int入力 2つ"
+  },
+  "int入力 3つ": {
+    "prefix": "inint3",
+    "body": [
+      "  int ${1:a}, ${2:b}, ${3:c};",
+      "  cin >> ${1} >> ${2} >> ${3};"
+    ],
+    "description": "int入力 3つ"
+  },
+  "int入力 4つ": {
+    "prefix": "inint4",
+    "body": [
+      "  int ${1:a}, ${2:b}, ${3:c}, ${4:d};",
+      "  cin >> ${1} >> ${2} >> ${3} >> ${4};"
+    ],
+    "description": "int入力 4つ"
+  },
+  "int入力 5つ": {
+    "prefix": "inint5",
+    "body": [
+      "  int ${1:a}, ${2:b}, ${3:c}, ${4:d}, ${5:e};",
+      "  cin >> ${1} >> ${2} >> ${3} >> ${4} >> ${5};"
+    ],
+    "description": "int入力 5つ"
+  },
+  "int入力 6つ": {
+    "prefix": "inint6",
+    "body": [
+      "  int ${1:a}, ${2:b}, ${3:c}, ${4:d}, ${5:e}, ${6:f};",
+      "  cin >> ${1} >> ${2} >> ${3} >> ${4} >> ${5} >> ${6};"
+    ],
+    "description": "int入力 6つ"
+  },
+  "int入力 7つ": {
+    "prefix": "inint7",
+    "body": [
+      "  int ${1:a}, ${2:b}, ${3:c}, ${4:d}, ${5:e}, ${6:f}, ${7:g};",
+      "  cin >> ${1} >> ${2} >> ${3} >> ${4} >> ${5} >> ${6} >> ${7};"
+    ],
+    "description": "int入力 7つ"
+  },
+  "int入力 8つ": {
+    "prefix": "inint8",
+    "body": [
+      "  int ${1:a}, ${2:b}, ${3:c}, ${4:d}, ${5:e}, ${6:f}, ${7:g}, ${8:h};",
+      "  cin >> ${1} >> ${2} >> ${3} >> ${4} >> ${5} >> ${6} >> ${7} >> ${8};"
+    ],
+    "description": "int入力 8つ"
+  },
+  "long long入力 1つ": {
+    "prefix": "inll",
+    "body": [
+      "  long long ${1:n};",
+      "  cin >> ${1};"
+    ],
+    "description": "long long入力 1つ"
+  },
+  "long long入力 2つ": {
+    "prefix": "inll2",
+    "body": [
+      "  long long ${1:a}, ${2:b};",
+      "  cin >> ${1} >> ${2};"
+    ],
+    "description": "long long入力 2つ"
+  },
+  "long long入力 3つ": {
+    "prefix": "inll3",
+    "body": [
+      "  long long ${1:a}, ${2:b}, ${3:c};",
+      "  cin >> ${1} >> ${2} >> ${3};"
+    ],
+    "description": "long long入力 3つ"
+  },
+  "long long入力 4つ": {
+    "prefix": "inll4",
+    "body": [
+      "  long long ${1:a}, ${2:b}, ${3:c}, ${4:d};",
+      "  cin >> ${1} >> ${2} >> ${3} >> ${4};"
+    ],
+    "description": "long long入力 4つ"
+  },
+  "char入力 1つ": {
+    "prefix": "inchar",
+    "body": [
+      "  char ${1:c};",
+      "  cin >> ${1};"
+    ],
+    "description": "char入力 1つ"
+  },
+  "char入力 2つ": {
+    "prefix": "inchar2",
+    "body": [
+      "  char ${1:a}, ${2:b};",
+      "  cin >> ${1} >> ${2};"
+    ],
+    "description": "char入力 2つ"
+  },
+  "char入力 3つ": {
+    "prefix": "inchar3",
+    "body": [
+      "  char ${1:a}, ${2:b}, ${3:c};",
+      "  cin >> ${1} >> ${2} >> ${3};"
+    ],
+    "description": "char入力 3つ"
+  },
+  "char入力 4つ": {
+    "prefix": "inchar4",
+    "body": [
+      "  char ${1:a}, ${2:b}, ${3:c}, ${4:d};",
+      "  cin >> ${1} >> ${2} >> ${3} >> ${4};"
+    ],
+    "description": "char入力 4つ"
+  },
+  "double入力 1つ": {
+    "prefix": "indouble",
+    "body": [
+      "  double ${1:d};",
+      "  cin >> ${1};"
+    ],
+    "description": "double入力 1つ"
+  },
+  "double入力 2つ": {
+    "prefix": "indouble2",
+    "body": [
+      "  double ${1:a}, ${2:b};",
+      "  cin >> ${1} >> ${2};"
+    ],
+    "description": "double入力 2つ"
+  },
+  "double入力 3つ": {
+    "prefix": "indouble3",
+    "body": [
+      "  double ${1:a}, ${2:b}, ${3:c};",
+      "  cin >> ${1} >> ${2} >> ${3};"
+    ],
+    "description": "double入力 3つ"
+  },
+  "double入力 4つ": {
+    "prefix": "indouble4",
+    "body": [
+      "  double ${1:a}, ${2:b}, ${3:c}, ${4:d};",
+      "  cin >> ${1} >> ${2} >> ${3} >> ${4};"
+    ],
+    "description": "double入力 4つ"
+  },
+  "string入力 1つ": {
+    "prefix": "instr",
+    "body": [
+      "  string ${1:s};",
+      "  cin >> ${1};"
+    ],
+    "description": "string入力 1つ"
+  },
+  "string入力 2つ": {
+    "prefix": "instr2",
+    "body": [
+      "  string ${1:s}, ${2:t};",
+      "  cin >> ${1} >> ${2};"
+    ],
+    "description": "string入力 2つ"
+  },
+  "string入力 3つ": {
+    "prefix": "instr3",
+    "body": [
+      "  string ${1:a}, ${2:b}, ${3:c};",
+      "  cin >> ${1} >> ${2} >> ${3};"
+    ],
+    "description": "string入力 3つ"
+  },
+  "string入力 4つ": {
+    "prefix": "instr4",
+    "body": [
+      "  string ${1:a}, ${2:b}, ${3:c}, ${4:d};",
+      "  cin >> ${1} >> ${2} >> ${3} >> ${4};"
+    ],
+    "description": "string入力 4つ"
+  },
+  "vector入力 1つ": {
+    "prefix": "invec",
+    "body": [
+      "  vector<${1|int,long long,double,string|}> ${2:a}(${3:n});",
+      "  for (int i=0; i<${3}; i++) {",
+      "    cin >> ${2}.at(i);",
+      "  }"
+    ],
+    "description": "vector入力 1つ"
+  },
+  "vector入力 2つ": {
+    "prefix": "invec2",
+    "body": [
+      "  vector<${1|int,long long,double,string|}> ${2:a}(${4:n}), ${3:b}(${4});",
+      "  for (int i=0; i<${4}; i++) {",
+      "    cin >> ${2}.at(i) >> ${3}.at(i);",
+      "  }"
+    ],
+    "description": "vector入力 2つ"
+  },
+  "vector入力 3つ": {
+    "prefix": "invec3",
+    "body": [
+      "  vector<${1|int,long long,double,string|}> ${2:a}(${5:n}), ${3:b}(${5}), ${4:c}(${5});",
+      "  for (int i=0; i<${5}; i++) {",
+      "    cin >> ${2}.at(i) >> ${3}.at(i) >> ${4}.at(i);",
+      "  }"
+    ],
+    "description": "vector入力 3つ"
+  },
+  "vector入力 4つ": {
+    "prefix": "invec4",
+    "body": [
+      "  vector<${1|int,long long,double,string|}> ${2:a}(${6:n}), ${3:b}(${6}), ${4:c}(${6}), ${5:d}(${6});",
+      "  for (int i=0; i<${6}; i++) {",
+      "    cin >> ${2}.at(i) >> ${3}.at(i) >> ${4}.at(i) >> ${5}.at(i);",
+      "  }"
+    ],
+    "description": "vector入力 4つ"
+  },
+  "二次元vector入力（正方形）": {
+    "prefix": "inmatn",
+    "body": [
+      "  vector<vector<${1|int,long long,double,string|}>> ${2:a}(${3:n},vector<${1}>(${3}));",
+      "  for (int i=0; i<${3}; i++) {",
+      "    for (int j=0; j<${3}; j++) {",
+      "      cin >> ${2}.at(i).at(j);",
+      "    }",
+      "  }"
+    ],
+    "description": "二次元vector入力（正方形）"
+  },
+  "二次元vector入力（長方形）": {
+    "prefix": "inmathw",
+    "body": [
+      "  vector<vector<${1|int,long long,double,string|}>> ${2:a}(${3:h},vector<${1}>(${4:w}));",
+      "  for (int i=0; i<${3}; i++) {",
+      "    for (int j=0; j<${4}; j++) {",
+      "      cin >> ${2}.at(i).at(j);",
+      "    }",
+      "  }"
+    ],
+    "description": "二次元vector入力（長方形）"
+  },
+  "二次元vector入力（不定長）": {
+    "prefix": "inmatk",
+    "body": [
+      "  vector<vector<${1|int,long long,double,string|}>> ${2:a}(${3:n});",
+      "  for (int i=0; i<${3}; i++) {",
+      "    int k;",
+      "    cin >> k;",
+      "    ${2}.at(i).resize(k);",
+      "    for (int j=0; j<k; j++) {",
+      "      cin >> ${2}.at(i).at(j);",
+      "    }",
+      "  }"
+    ],
+    "description": "二次元vector入力（不定長）"
+  },
+  "木構造（隣接リスト）を入力": {
+    "prefix": "intree",
+    "body": [
+      "  int ${2:m} = ${1:n}-1;",
+      "  vector<int> ${3:u}(${2}), ${4:v}(${2});",
+      "  vector<vector<int>> ${5:graph}(${1});",
+      "  for (int i=0; i<${2}; i++) {",
+      "    cin >> ${3}.at(i) >> ${4}.at(i);",
+      "    ${3}.at(i)--;",
+      "    ${4}.at(i)--;",
+      "    ${5}.at(${3}.at(i)).emplace_back(${4}.at(i));",
+      "    ${5}.at(${4}.at(i)).emplace_back(${3}.at(i));",
+      "  }"
+    ],
+    "description": "木構造（隣接リスト）を入力\n頂点番号は 0-indexed化して保管"
+  },
+  "重み付き木構造（隣接リスト）を入力": {
+    "prefix": "inwtree",
+    "body": [
+      "  int ${3:m} = ${2:n}-1;",
+      "  vector<int> ${4:u}(${3}), ${5:v}(${3});",
+      "  vector<${1|int,long long,double|}> ${6:w}(${3});",
+      "  vector<vector<pair<${1},int>>> ${7:graph}(${2});",
+      "  for (int i=0; i<${3}; i++) {",
+      "    cin >> ${4}.at(i) >> ${5}.at(i) >> ${6}.at(i);",
+      "    ${4}.at(i)--;",
+      "    ${5}.at(i)--;",
+      "    ${7}.at(${4}.at(i)).emplace_back(${6}.at(i),${5}.at(i));",
+      "    ${7}.at(${5}.at(i)).emplace_back(${6}.at(i),${4}.at(i));",
+      "  }"
+    ],
+    "description": "重み付き木構造（隣接リスト）を入力\n入力順は「頂点、頂点、重み」、データは「重み、行先」\n頂点番号は 0-indexed化して保管"
+  },
+  "無向グラフ（隣接リスト）を入力": {
+    "prefix": "ingraph",
+    "body": [
+      "  vector<int> ${3:u}(${2:m}), ${4:v}(${2});",
+      "  vector<vector<int>> ${5:graph}(${1:n});",
+      "  for (int i=0; i<${2}; i++) {",
+      "    cin >> ${3}.at(i) >> ${4}.at(i);",
+      "    ${3}.at(i)--;",
+      "    ${4}.at(i)--;",
+      "    ${5}.at(${3}.at(i)).emplace_back(${4}.at(i));",
+      "    ${5}.at(${4}.at(i)).emplace_back(${3}.at(i));",
+      "  }"
+    ],
+    "description": "無向グラフ（隣接リスト）を入力\n頂点番号は 0-indexed化して保管\n有向の場合は2つめのemplace_backを消す"
+  },
+  "重み付き無向グラフ（隣接リスト）を入力": {
+    "prefix": "inwgraph",
+    "body": [
+      "  vector<int> ${4:u}(${3:m}), ${5:v}(${3});",
+      "  vector<${1|int,long long,double|}> ${6:w}(${3});",
+      "  vector<vector<pair<${1},int>>> ${7:graph}(${2:n});",
+      "  for (int i=0; i<${3}; i++) {",
+      "    cin >> ${4}.at(i) >> ${5}.at(i) >> ${6}.at(i);",
+      "    ${4}.at(i)--;",
+      "    ${5}.at(i)--;",
+      "    ${7}.at(${4}.at(i)).emplace_back(${6}.at(i),${5}.at(i));",
+      "    ${7}.at(${5}.at(i)).emplace_back(${6}.at(i),${4}.at(i));",
+      "  }"
+    ],
+    "description": "重み付き無向グラフ（隣接リスト）を入力\n入力順は「頂点、頂点、重み」、データは「重み、行先」\n頂点番号は 0-indexed化して保管\n有向の場合は2つめのemplace_backを消す"
+  },
+  "getline入力": {
+    "prefix": "ingetline",
+    "body": [
+      "  string ${1:s};",
+      "  getline(cin, ${1});"
+    ],
+    "description": "getlineで1行を入力\n直前にcin >> を使っている場合は改行の読み残しに注意"
+  },
+  "EOF入力": {
+    "prefix": "ineof",
+    "body": [
+      "  ${1|int,long long,double,string|} ${2:num};",
+      "  vector<${1}> ${3:a};",
+      "  while (cin >> ${2}) {",
+      "    ${3}.emplace_back(${2});",
+      "  }"
+    ],
+    "description": "EOFまで入力しvectorに格納\n入力が終了するか、読み取りに失敗するとループを抜ける"
+  },
+  "int型result": {
+    "prefix": "res",
+    "body": [
+      "  int ${1:result} = 0;"
+    ],
+    "description": "int型のresultを0で初期化"
+  },
+  "long long型result": {
+    "prefix": "resll",
+    "body": [
+      "  long long ${1:result} = 0;"
+    ],
+    "description": "long long型のresultを0で初期化"
+  },
+  "double型result": {
+    "prefix": "resd",
+    "body": [
+      "  double ${1:result} = 0.0;"
+    ],
+    "description": "double型のresultを0.0で初期化"
+  },
+  "string型result（空）": {
+    "prefix": "resstr",
+    "body": [
+      "  string ${1:result} = \"\";"
+    ],
+    "description": "string型のresultを空文字列で初期化"
+  },
+  "string型result（Yes）": {
+    "prefix": "resy",
+    "body": [
+      "  string ${1:result} = \"Yes\";"
+    ],
+    "description": "string型のresultをYesで初期化"
+  },
+  "string型result（No）": {
+    "prefix": "resn",
+    "body": [
+      "  string ${1:result} = \"No\";"
+    ],
+    "description": "string型のresultをNoで初期化"
+  },
+  "vector型result（空）": {
+    "prefix": "resvece",
+    "body": [
+      "  vector<${1|int,long long,double,bool,string,pair<int\\,int>,pair<long long\\,long long>|}> ${2:result};"
+    ],
+    "description": "vector型のresultを定義して空で初期化"
+  },
+  "vector型result（長さn）": {
+    "prefix": "resvec",
+    "body": [
+      "  vector<${1|int,long long,double,bool,string,pair<int\\,int>,pair<long long\\,long long>|}> ${2:result}(${3:n});"
+    ],
+    "description": "vector型のresultを定義して長さnで初期化"
+  },
+  "vector型result（正方形）": {
+    "prefix": "resmatn",
+    "body": [
+      "  vector<vector<${1|int,long long,double,bool,string,pair<int\\,int>,pair<long long\\,long long>|}>> ${2:result}(${3:n},vector<${1}>(${3}));"
+    ],
+    "description": "二次元vector型のresultを定義してn×nで初期化"
+  },
+  "vector型result（長方形）": {
+    "prefix": "resmathw",
+    "body": [
+      "  vector<vector<${1|int,long long,double,bool,string,pair<int\\,int>,pair<long long\\,long long>|}>> ${2:result}(${3:h},vector<${1}>(${4:w}));"
+    ],
+    "description": "二次元vector型のresultを定義してh×wで初期化"
+  },
+  "resultを普通に出力": {
+    "prefix": "out",
+    "body": [
+      "  cout << ${1:result} << endl;"
+    ],
+    "description": "resultを1行で出力"
+  },
+  "result（整数）を右揃えで出力": {
+    "prefix": "outi",
+    "body": [
+      "  cout << setfill('${1:0}') << right << setw(${2:4}) << ${3:result} << endl;"
+    ],
+    "description": "埋め文字と最小表示幅を指定（初期値は0埋め4文字）\nsetfillの設定は以後の出力にも残る"
+  },
+  "result（小数）を出力": {
+    "prefix": "outd",
+    "body": [
+      "  cout << fixed << setprecision(${1:10}) << ${2:result} << endl;"
+    ],
+    "description": "小数点以下10桁（変更可）で出力"
+  },
+  "result（vector）を一列に出力": {
+    "prefix": "outl",
+    "body": [
+      "  for (int i=0; i<ssize(${1:result}); i++) {",
+      "    cout << ${1}.at(i);",
+      "    if (i!=ssize(${1})-1) cout << ' ';",
+      "  }",
+      "  cout << '\\n';"
+    ],
+    "description": "vectorをスペース区切りで1行に出力"
+  },
+  "result（vector）を縦に出力": {
+    "prefix": "outvec",
+    "body": [
+      "  for (int i=0; i<ssize(${1:result}); i++) {",
+      "    cout << ${1}.at(i) << '\\n';",
+      "  }"
+    ],
+    "description": "vectorを1要素ずつ改行して出力"
+  },
+  "result（vector<pair>）を縦に出力": {
+    "prefix": "outpair",
+    "body": [
+      "  for (auto [i, j] : ${1:result}) {",
+      "    cout << i << ' ' << j << '\\n';",
+      "  }"
+    ],
+    "description": "vector<pair>をfirst secondの順で1組ずつ改行して出力"
+  },
+  "result（二次元vector）を出力": {
+    "prefix": "outmat",
+    "body": [
+      "  for (int i=0; i<ssize(${1:result}); i++) {",
+      "    for (int j=0; j<ssize(${1}.at(i)); j++) {",
+      "      cout << ${1}.at(i).at(j);",
+      "      if (j!=ssize(${1}.at(i))-1) cout << ' '; ",
+      "    }",
+      "    cout << '\\n';",
+      "  }"
+    ],
+    "description": "各行をスペース区切りで出力（不定長の行にも対応）"
+  }
+}
