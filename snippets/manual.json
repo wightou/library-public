@@ -1,4 +1,214 @@
 {
+
+  "modの短縮入力": {
+    "prefix": "conmod",
+    "body": "constexpr int mod = ${1|998244353,1000000007,10007|};"
+  },
+
+  "INFの短縮入力": {
+    "prefix": "coninf",
+    "body": "constexpr int INF = ${1|1001001001,2002002002,1000000000|};"
+  },
+
+  "INFllの短縮入力": {
+    "prefix": "coninfll",
+    "body": "constexpr long long INF = ${1|1001001001001001001LL,4004004004004004004LL,1000000000000000000LL|};"
+  },
+
+  "long longの短縮入力": {
+    "prefix": "ll",
+    "body": "long long"
+  },
+
+  "unsigned long longの短縮入力": {
+    "prefix": "ull",
+    "body": "unsigned long long"
+  },
+
+  "priority_queue（小さい方から）の短縮入力": {
+    "prefix": "pqs",
+    "body": "priority_queue<${1|int,long long,double,string,pair<int\\,int>,pair<long long\\,long long>|},vector<${1}>,greater<${1}>> que;"
+  },
+
+  "priority_queue（大きい方から）の短縮入力": {
+    "prefix": "pql",
+    "body": "priority_queue<${1|int,long long,double,string,pair<int\\,int>,pair<long long\\,long long>|}> que;"
+  },
+  
+  "pair<int,int>の短縮入力": {
+    "prefix": "pii",
+    "body": "pair<int,int>"
+  },
+  
+  "pair<long long,long long>の短縮入力": {
+    "prefix": "pll",
+    "body": "pair<long long,long long>"
+  },
+
+  "tuple<int,int,int>の短縮入力": {
+    "prefix": "tupleii",
+    "body": "tuple<int,int,int$0>"
+  },
+
+  "get<0>()の短縮入力": {
+    "prefix": "get0",
+    "body": "get<0$0>()"
+  },
+  
+  "vector<int>の短縮入力": {
+    "prefix": "vi",
+    "body": "vector<int>"
+  },
+
+  "vector<long long>の短縮入力": {
+    "prefix": "vll",
+    "body": "vector<long long>"
+  },
+
+  "vector<pair<int,int>>の短縮入力": {
+    "prefix": "vpii",
+    "body": "vector<pair<int,int>>"
+  },
+
+  "vector<pair<long long,long long>>の短縮入力": {
+    "prefix": "vpll",
+    "body": "vector<pair<long long,long long>>"
+  },
+
+  "vector<>の短縮入力": {
+    "prefix": "vec",
+    "body": "vector<$0>"
+  },
+
+  "vectorのbegin()とend()の短縮入力": {
+    "prefix": "vall",
+    "body": "${1:vec}.begin(),${1}.end()"
+  },
+
+  "vectorのrbegin()とrend()の短縮入力": {
+    "prefix": "vrall",
+    "body": "${1:vec}.rbegin(),${1}.rend()"
+  },
+
+  "vectorのsortの短縮入力": {
+    "prefix": "vsort",
+    "body": "sort(${1:vec}.begin(),${1}.end());"
+  },
+
+  "vectorのreverseの短縮入力": {
+    "prefix": "vreverse",
+    "body": "reverse(${1:vec}.begin(),${1}.end());"
+  },
+
+  "vectorのユニーク化の短縮入力": {
+    "prefix": "vunique",
+    "body": [
+      "sort(${1:vec}.begin(),${1}.end());",
+      "${1}.erase(unique(${1}.begin(),${1}.end()),${1}.end());"
+    ]
+  },
+
+  "vectorの逆順sortの短縮入力": {
+    "prefix": "vrsort",
+    "body": "sort(${1:vec}.rbegin(),${1}.rend());"
+  },
+
+  "vectorのiotaの短縮入力": {
+    "prefix": "viota",
+    "body": "iota(${1:vec}.begin(),${1}.end(),0$0);"
+  },
+
+  "vectorの総和の短縮入力": {
+    "prefix": "vsum",
+    "body": [
+      "accumulate(${1:a}.begin(),${1}.end(),0LL);"
+    ]
+  },
+
+  "vectorの累積和の短縮入力": {
+    "prefix": "vpsum",
+    "body": [
+      "partial_sum(${1:a}.begin(),${1}.end(),${2:sum}.begin()+1);"
+    ]
+  },
+
+  "vectorの最大の短縮入力": {
+    "prefix": "vmax",
+    "body": [
+      "*max_element(${1:a}.begin(),${1}.end())"
+    ]
+  },
+
+  "vectorの最小の短縮入力": {
+    "prefix": "vmin",
+    "body": [
+      "*min_element(${1:a}.begin(),${1}.end())"
+    ]
+  },
+
+
+  "vectorの最大位置の短縮入力": {
+    "prefix": "vpmax",
+    "body": [
+      "max_element(${1:a}.begin(),${1}.end())-${1}.begin()"
+    ]
+  },
+
+  "vectorの最小位置の短縮入力": {
+    "prefix": "vpmin",
+    "body": [
+      "min_element(${1:a}.begin(),${1}.end())-${1}.begin()"
+    ]
+  },
+
+  "二次元vectorの短縮入力": {
+    "prefix": "vv",
+    "body": "vector<vector<${1|int,long long,double,bool,string,pair<int\\,int>,pair<long long\\,long long>|}>> ${2:a}"
+  },
+
+  "二次元vector（初期化入り）の短縮入力": {
+    "prefix": "vvi",
+    "body": "vector<vector<${1|int,long long,double,bool,string,pair<int\\,int>,pair<long long\\,long long>|}>> ${2:a}(${3:h},vector<${1}>(${4:w}));"
+  },
+
+  "三次元vectorの短縮入力": {
+    "prefix": "vvv",
+    "body": "vector<vector<vector<${1|int,long long,double,bool,string,pair<int\\,int>,pair<long long\\,long long>|}>>> ${2:a}"
+  },
+
+  "三次元vector（初期化入り）の短縮入力": {
+    "prefix": "vvvi",
+    "body": "vector<vector<vector<${1|int,long long,double,bool,string,pair<int\\,int>,pair<long long\\,long long>|}>>> ${2:a}(${3:h},vector<vector<${1}>>(${4:w},vector<${1}>(${5:d})));"
+  },
+
+  "forループの短縮入力1": {
+    "prefix": "fori",
+    "body": "for (int i=0; i<n; i++)"
+  },
+
+  "forループの短縮入力2": {
+    "prefix": "forir",
+    "body": "for (int i=n-1; i>=0; i--)"
+  },
+
+  "forループの短縮入力3": {
+    "prefix": "forj",
+    "body": "for (int j=0; j<m; j++)"
+  },
+
+  "emplace_back()の短縮入力3": {
+    "prefix": "eb",
+    "body": "emplace_back($0)"
+  },
+
+  "入出力高速化": {
+    "prefix": "iofast",
+    "body": [
+      "ios::sync_with_stdio(false);",
+      "cin.tie(nullptr);"
+    ]
+  },
+
   "cpp.json化用マーカー": {
     "prefix": "tmmarker",
     "body": [
