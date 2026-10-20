@@ -11,6 +11,18 @@ using namespace std;
 // T prod(int u, int l, int d, int r) : [u,d)×[l,r) の区間処理結果を返す、O(1)
 // ※ op()の内容は任意の可換群に編集可（inv(a,b)=a^(-1)*bとe()の編集も必要）
 template<class T>
+T op(T a, T b) {
+  return a+b;
+}
+template<class T>
+T inv(T a, T b) {
+  return b-a;
+}
+template<class T>
+T e() {
+  return 0;
+}
+template<class T, T(*op)(T,T) = op<T>, T(*inv)(T,T) = inv<T>, T(*e)() = e<T>>
 struct Accumulation2D {
   int h, w;
   vector<vector<T>> values;
@@ -24,15 +36,6 @@ struct Accumulation2D {
       for (int j=0; j<w-1; j++) values[i+1][j+1] = op(values[i+1][j+1],values[i][j+1]);
     }
   }
-  T op(T a, T b) {
-    return a+b;
-  }
-  T inv(T a, T b) {
-    return b-a;
-  }
-  T e() {
-    return 0;
-  }
   T prod(int u, int l, int d, int r) {
     assert(0<=u&&u<=d&&d<h);
     assert(0<=l&&l<=r&&r<w);
@@ -45,7 +48,7 @@ int main () {
 
   // ABC106D AtCoder Express 2 での使用例（こんなものを用いなくても普通の二次元累積和で解ける）
   // https://atcoder.jp/contests/abc106/tasks/abc106_d
-  // https://atcoder.jp/contests/abc106/submissions/80083829
+  // https://atcoder.jp/contests/abc106/submissions/80223003
 
   int n, m, query;
   cin >> n >> m >> query;

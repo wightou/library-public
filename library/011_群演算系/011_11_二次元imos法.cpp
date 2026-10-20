@@ -13,6 +13,18 @@ using namespace std;
 // T get(int r, int c) : 位置(r,c)での値を返す、O(1)
 // ※ op()の内容は任意の可換群に編集可（inv(a,b)=a^(-1)*bとe()の編集も必要）
 template<class T>
+T op(T a, T b) {
+  return a+b;
+}
+template<class T>
+T inv(T a, T b) {
+  return b-a;
+}
+template<class T>
+T e() {
+  return 0;
+}
+template<class T, T(*op)(T,T) = op<T>, T(*inv)(T,T) = inv<T>, T(*e)() = e<T>>
 struct Imos2D {
   bool built = false;
   int h, w;
@@ -21,15 +33,6 @@ struct Imos2D {
     assert(h_>=0&&w_>=0);
     h = h_; w = w_;
     values.assign(h,vector<T>(w,e()));
-  }
-  T op(T a, T b) {
-    return a+b;
-  }
-  T inv(T a, T b) {
-    return b-a;
-  }
-  T e() {
-    return 0;
   }
   void apply(int u, int l, int d, int r, T x) {
     assert(!built&&0<=u&&u<h&&u<=d&&d<=h&&0<=l&&l<w&&l<=r&&r<=w);
@@ -55,7 +58,7 @@ int main () {
 
   // 典型90問028 Cluttered Paper での使用例（こんなものを用いなくても普通の二次元累積和で解ける）
   // https://atcoder.jp/contests/typical90/tasks/typical90_ab
-  // https://atcoder.jp/contests/typical90/submissions/80220036
+  // https://atcoder.jp/contests/typical90/submissions/80223110
 
   int n;
   cin >> n;

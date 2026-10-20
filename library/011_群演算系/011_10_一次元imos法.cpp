@@ -13,6 +13,18 @@ using namespace std;
 // T get(int p) : 位置pでの値を返す、O(1)
 // ※ op()の内容は任意の可換群に編集可（inv(a,b)=a^(-1)*bとe()の編集も必要）
 template<class T>
+T op(T a, T b) {
+  return a+b;
+}
+template<class T>
+T inv(T a, T b) {
+  return b-a;
+}
+template<class T>
+T e() {
+  return 0;
+}
+template<class T, T(*op)(T,T) = op<T>, T(*inv)(T,T) = inv<T>, T(*e)() = e<T>>
 struct Imos {
   bool built = false;
   int n;
@@ -21,15 +33,6 @@ struct Imos {
     assert(n_>=0);
     n = n_;
     values.assign(n,e());
-  }
-  T op(T a, T b) {
-    return a+b;
-  }
-  T inv(T a, T b) {
-    return b-a;
-  }
-  T e() {
-    return 0;
   }
   void apply(int l, int r, T x) {
     assert(!built&&0<=l&&l<n&&l<=r&&r<=n);
@@ -52,7 +55,7 @@ int main () {
 
   // ABC014C AtColor での使用例（こんなものを用いなくても普通に解ける）
   // https://atcoder.jp/contests/abc014/tasks/abc014_3
-  // https://atcoder.jp/contests/abc014/submissions/80220015
+  // https://atcoder.jp/contests/abc014/submissions/80223055
 
   int n;
   cin >> n;
