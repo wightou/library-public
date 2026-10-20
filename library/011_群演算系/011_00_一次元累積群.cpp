@@ -37,7 +37,7 @@ struct Accumulation {
 
 int main () {
 
-  // 典型90問010での使用例（こんなものを用いなくても普通の累積和で解ける）
+  // 典型90問010 Score Sum Queries での使用例（こんなものを用いなくても普通の累積和で解ける）
   // https://atcoder.jp/contests/typical90/tasks/typical90_j
   // https://atcoder.jp/contests/typical90/submissions/80083250
 
