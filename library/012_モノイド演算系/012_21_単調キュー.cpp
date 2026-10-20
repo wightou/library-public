@@ -1,8 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-constexpr int INF = 1001001001;
-
 // name: 単調キュー
 // prefix: fnmonoqueue
 // description: 単調キュー
@@ -15,10 +13,13 @@ constexpr int INF = 1001001001;
 // pair<T,int> get() : 値と位置を返す、O(1)
 // ※ compare()の内容はfirstの比較でaを消す条件に書き換えること
 template<class T>
+bool compare(T a, T b) {
+  return (a<=b);
+}
+template<class T, bool(*compare)(T,T) = compare<T>>
 struct MonoQueue {
   deque<pair<T,int>> que;
   MonoQueue() {}
-  bool compare(T a, T b) {return (a<=b);}
   void emplace(T v, int p) {
     while (!que.empty()&&compare(que.back().first,v)) que.pop_back();
     que.emplace_back(v,p);
@@ -29,23 +30,15 @@ struct MonoQueue {
 // cpp.json to here
 
 template<class T>
-struct MonoQueue2 {
-  deque<pair<T,int>> que;
-  MonoQueue2() {}
-  bool compare(T a, T b) {return (a>=b);}
-  void emplace(T v, int p) {
-    while (!que.empty()&&compare(que.back().first,v)) que.pop_back();
-    que.emplace_back(v,p);
-  }
-  void pop(int l) {while (!que.empty()&&que.front().second<=l) que.pop_front();}
-  pair<T,int> get() {assert(!que.empty()); return que.front();}
-};
+bool compare2(T a, T b) {
+  return (a>=b);
+}
 
 int main () {
 
   // AWC0001E 気温の変動幅 での使用例
   // https://atcoder.jp/contests/awc0001/tasks/awc0001_e
-  // https://atcoder.jp/contests/awc0001/submissions/80221611
+  // https://atcoder.jp/contests/awc0001/submissions/80223325
 
   int n, k;
   cin >> n >> k;
@@ -61,7 +54,7 @@ int main () {
   MonoQueue<int> mono;
 
   // 単調最小キュー
-  MonoQueue2<int> mono2;
+  MonoQueue<int,compare2> mono2;
 
   for (int i=0; i<n; i++) {
 

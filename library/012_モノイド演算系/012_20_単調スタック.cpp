@@ -15,11 +15,17 @@ constexpr int INF = 1001001001;
 // ※ compare()の内容はfirstの比較でaを消す条件に書き換えること
 // ※ e()は番兵としてその判定で全てに勝てるものを返すこと
 template<class T>
+bool compare(T a, T b) {
+  return (a<=b);
+}
+template<class T>
+T e() {
+  return INF;
+}
+template<class T, bool(*compare)(T,T) = compare<T>, T(*e)() = e<T>>
 struct MonoStack {
   deque<pair<T,int>> que;
   MonoStack() {que.emplace_back(e(),-1);}
-  bool compare(T a, T b) {return (a<=b);}
-  T e() {return INF;}
   pair<T,int> emplace(T v, int p) {
     while (compare(que.back().first,v)) que.pop_back();
     pair<T,int> result = que.back();
@@ -33,7 +39,7 @@ int main () {
 
   // ABC359E Water Tank での使用例
   // https://atcoder.jp/contests/abc359/tasks/abc359_e
-  // https://atcoder.jp/contests/abc359/submissions/80220054
+  // https://atcoder.jp/contests/abc359/submissions/80223256
 
   int n;
   cin >> n;
