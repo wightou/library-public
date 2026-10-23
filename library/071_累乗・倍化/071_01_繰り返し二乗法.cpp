@@ -37,7 +37,7 @@ T power(const T& a, long long p) {
 
 int main () {
 
-  // ABC178Cでの使用例
+  // ABC178C Ubiquity での使用例
   // https://atcoder.jp/contests/abc178/tasks/abc178_c
   // https://atcoder.jp/contests/abc178/submissions/80263158
 
