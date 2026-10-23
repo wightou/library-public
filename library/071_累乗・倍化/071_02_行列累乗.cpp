@@ -41,7 +41,7 @@ vector<vector<long long>> e(int n) {
   }
   return result;
 }
-vector<vector<long long>> doubling(vector<vector<long long>> a, long long p) {
+vector<vector<long long>> doubling(const vector<vector<long long>>& a, long long p) {
   assert(p>=0);
   assert(!a.empty()&&a.size()==a.at(0).size());
   if (p==0) {
@@ -60,7 +60,7 @@ int main () {
 
   // アルゴリズムと数学054 Fibonacci Hard での使用例
   // https://atcoder.jp/contests/math-and-algorithm/tasks/math_and_algorithm_at
-  // https://atcoder.jp/contests/math-and-algorithm/submissions/80263164
+  // 
 
   long long n;
   cin >> n;
