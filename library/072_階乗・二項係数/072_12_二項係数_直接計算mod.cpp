@@ -25,14 +25,14 @@ long long power_mod(long long a, long long p) {
   return result;
 }
 
-// 階乗と逆階乗のmod計算（要：power_mod）
+// 階乗と逆階乗のmod計算（要：累乗mod）
 // void make_factorial(int n) : nまでの階乗と逆階乗を前計算、不足分のみ追加、O(n) ※ log mod は定数扱いで
 // long long factorial(int n) : n! modを返す、延べO(n_max) ※ log mod は定数扱いで
 // long long fact_inv(int n) : n!の逆元modを返す、延べO(n_max) ※ log mod は定数扱いで
 // ※ modは素数であること
 // ※ factorial_data[i]はi! mod、fact_inv_data[i]はその逆元
-// ※ factorial()とfact_inv()は0<=n<mod/2で使用すること
-// ※ 未計算の場合は要求値の2倍まで階乗・逆階乗をまとめて計算する
+// ※ factorial()とfact_inv()は0<=n<modで使用すること
+// ※ 未計算の場合は要求値の2倍（上限mod-1）まで階乗・逆階乗をまとめて計算する
 // ※ 計算済みの範囲は再計算せず、データを保持する
 // ※ make_factorial()を直接呼ぶ場合は0<=n<modであること
 vector<long long> factorial_data(1,1);
@@ -54,14 +54,14 @@ void make_factorial(int n) {
 }
 long long factorial(int n) {
   assert(n>=0);
-  assert(n<mod/2);
-  if (ssize(factorial_data)<=n) make_factorial(2*n);
+  assert(n<mod);
+  if (ssize(factorial_data)<=n) make_factorial(min(2LL*n,(long long)mod-1));
   return factorial_data[n];
 }
 long long fact_inv(int n) {
   assert(n>=0);
-  assert(n<mod/2);
-  if (ssize(factorial_data)<=n) make_factorial(2*n);
+  assert(n<mod);
+  if (ssize(factorial_data)<=n) make_factorial(min(2LL*n,(long long)mod-1));
   return fact_inv_data[n];
 }
 
@@ -71,7 +71,7 @@ long long fact_inv(int n) {
 // cpp.json from here
 // 二項係数（nが大きくrが比較的小さい場合、要：階乗mod）
 // long long comb(long long n, int r) : nCr mod modを返す、O(min(r,n-r))（初回前計算を除く）
-// ※ modが素数、0<=r<mod/2で使用すること
+// ※ modが素数、0<=r<modで使用すること
 // ※ 階乗・逆階乗は不足時に自動拡張する
 // ※ nはlong longの範囲内でよい（n>=0）
 long long comb(long long n, int r) {
@@ -91,7 +91,7 @@ int main () {
 
   // ABC156D Bouquet での使用例
   // https://atcoder.jp/contests/abc156/tasks/abc156_d
-  // https://atcoder.jp/contests/abc156/submissions/80281937
+  // https://atcoder.jp/contests/abc156/submissions/80281937 （提出コードは階乗のコードが古い仕様）
 
   int n, a, b;
   cin >> n >> a >> b;
