@@ -4,30 +4,30 @@ using namespace std;
 // Fenwick木
 // 以下で、nは配列の長さ、pはindex、lとrは区間端
 // コンストラクタ : FenwickTree(int n); : 長さnで初期化、全要素e()、O(N)
-// void add(int p, T x) : 位置pにxを演算する、O(log N)
-// void set(int p, T x) : 位置pの値をxに変更する、O(log N)
+// void add(int p, const T& x) : 位置pにxを演算する、O(log N)
+// void set(int p, const T& x) : 位置pの値をxに変更する、O(log N)
 // T sum(int l, int r) : [l,r) の区間処理結果を返す、O(log N)
 // T get(int p) : 位置pの値を返す、O(log N)
 // ※ op()の内容は任意の可換群に編集可（inv(a,b)=a^(-1)*bとe()の編集も必要）
 // ※ 二分探索は累積和が単調非減少の場合のみコメントアウトを解除して使用可能
 template<class T>
-T op(T a, T b) {
+T op(const T& a, const T& b) {
   return a+b;
 }
 template<class T>
-T inv(T a, T b) {
+T inv(const T& a, const T& b) {
   return b-a;
 }
 template<class T>
 T e() {
   return 0;
 }
-template<class T, T(*op)(T,T) = op<T>, T(*inv)(T,T) = inv<T>, T(*e)() = e<T>>
+template<class T, T(*op)(const T&,const T&) = op<T>, T(*inv)(const T&,const T&) = inv<T>, T(*e)() = e<T>>
 struct FenwickTree {
   int n;
   vector<T> values;
   FenwickTree(int n_) {assert(n_>=1); n = n_; values.assign(n,e());}
-  void add(int p, T x) {
+  void add(int p, const T& x) {
     assert(0<=p&&p<n);
     p++;
     while(p<=n) {
@@ -35,8 +35,8 @@ struct FenwickTree {
       p += (p&-p);
     }
   }
-  void set(int p, T x) {add(p,inv(get(p),x));}
-  T sum(int p) {
+  void set(int p, const T& x) {add(p,inv(get(p),x));}
+  T sum(int p) const {
     assert(0<=p&&p<=n);
     T s = e();
     while(p>0) {
@@ -45,12 +45,12 @@ struct FenwickTree {
     }
     return s;
   }
-  T sum(int l, int r) {
+  T sum(int l, int r) const {
     assert(0<=l&&l<=r&&r<=n);
     return inv(sum(l),sum(r));
   }
-  T get(int p) {return sum(p,p+1);}
-  // int lower_bound(int l, T x) {
+  T get(int p) const {return sum(p,p+1);}
+  // int lower_bound(int l, T x) const {
   //   assert(0<=l&&l<=n);
   //   if (x<=e()) return l;
   //   x = op(sum(l),x);
@@ -75,17 +75,17 @@ struct FenwickTree {
 // 二次元Fenwick木（要：一次元Fenwick木）
 // 以下で、hとwは縦横の長さ、(r,c)は位置、(u,l,d,r)は矩形の上下左右の端
 // コンストラクタ : FenwickTree2D(int h, int w); : h×wで初期化、全要素e()、O(HW)
-// void add(int r, int c, T x) : 位置(r,c)にxを演算する、O(logH logW)
-// void set(int r, int c, T x) : 位置(r,c)の値をxに変更する、O(logH logW)
+// void add(int r, int c, const T& x) : 位置(r,c)にxを演算する、O(logH logW)
+// void set(int r, int c, const T& x) : 位置(r,c)の値をxに変更する、O(logH logW)
 // T sum(int u, int l, int d, int r) : [u,d)×[l,r) の矩形の区間処理結果を返す、O(logH logW)
 // T get(int r, int c) : 位置(r,c)の値を返す、O(logH logW)
 // ※ op()の内容は任意の可換群に編集可（inv(a,b)=a^(-1)*bとe()の編集も必要）
-template<class T, T(*op)(T,T) = op<T>, T(*inv)(T,T) = inv<T>, T(*e)() = e<T>>
+template<class T, T(*op)(const T&,const T&) = op<T>, T(*inv)(const T&,const T&) = inv<T>, T(*e)() = e<T>>
 struct FenwickTree2D {
   int h, w;
   vector<FenwickTree<T,op,inv,e>> values;
   FenwickTree2D(int h_, int w_) {assert(h_>=1); assert(w_>=1); h = h_; w = w_; values.assign(h,FenwickTree<T,op,inv,e>(w));}
-  void add(int r, int c, T x) {
+  void add(int r, int c, const T& x) {
     assert(0<=r&&r<h&&0<=c&&c<w);
     r++;
     while(r<=h) {
@@ -93,8 +93,8 @@ struct FenwickTree2D {
       r += (r&-r);
     }
   }
-  void set(int r, int c, T x) {add(r,c,inv(get(r,c),x));}
-  T sum(int r, int c) {
+  void set(int r, int c, const T& x) {add(r,c,inv(get(r,c),x));}
+  T sum(int r, int c) const {
     assert(0<=r&&r<=h&&0<=c&&c<=w);
     T s = e();
     while(r>0) {
@@ -103,11 +103,11 @@ struct FenwickTree2D {
     }
     return s;
   }
-  T sum(int u, int l, int d, int r) {
+  T sum(int u, int l, int d, int r) const {
     assert(0<=u&&u<=d&&d<=h&&0<=l&&l<=r&&r<=w);
     return inv(op(sum(u,r),sum(d,l)),op(sum(u,l),sum(d,r)));
   }
-  T get(int r, int c) {return sum(r,c,r+1,c+1);}
+  T get(int r, int c) const {return sum(r,c,r+1,c+1);}
 };
 // cpp.json to here
 
@@ -115,7 +115,7 @@ int main () {
 
   // ABC106 D AtCoder Express 2 での使用例（こんなものを用いなくても普通の二次元累積和で解ける）
   // https://atcoder.jp/contests/abc106/tasks/abc106_d
-  // https://atcoder.jp/contests/abc106/submissions/80241821
+  // https://atcoder.jp/contests/abc106/submissions/80241821 （const修飾子がまだついていないバージョン）
 
   int n, m, q;
   cin >> n >> m >> q;

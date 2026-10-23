@@ -8,29 +8,29 @@ using namespace std;
 // 単調キュー
 // 以下で、vは値、lとpは位置
 // コンストラクタ : MonoQueue(); : 準備、O(1)
-// void emplace(T v, int p) : 単調キューにデータ{v,p}を入れる、償却O(1)
+// void emplace(const T& v, int p) : 単調キューにデータ{v,p}を入れる、償却O(1)
 // void pop(int l) : 位置が l 以下のものを全て削除、償却O(1)
 // pair<T,int> get() : 値と位置を返す、O(1)
 // ※ compare()の内容はfirstの比較でaを消す条件に書き換えること
 template<class T>
-bool compare(T a, T b) {
+bool compare(const T& a, const T& b) {
   return (a<=b);
 }
-template<class T, bool(*compare)(T,T) = compare<T>>
+template<class T, bool(*compare)(const T&,const T&) = compare<T>>
 struct MonoQueue {
   deque<pair<T,int>> que;
   MonoQueue() {}
-  void emplace(T v, int p) {
+  void emplace(const T& v, int p) {
     while (!que.empty()&&compare(que.back().first,v)) que.pop_back();
     que.emplace_back(v,p);
   }
   void pop(int l) {while (!que.empty()&&que.front().second<=l) que.pop_front();}
-  pair<T,int> get() {assert(!que.empty()); return que.front();}
+  pair<T,int> get() const {assert(!que.empty()); return que.front();}
 };
 // cpp.json to here
 
 template<class T>
-bool compare2(T a, T b) {
+bool compare2(const T& a, const T& b) {
   return (a>=b);
 }
 
@@ -38,7 +38,7 @@ int main () {
 
   // AWC0001E 気温の変動幅 での使用例
   // https://atcoder.jp/contests/awc0001/tasks/awc0001_e
-  // https://atcoder.jp/contests/awc0001/submissions/80223325
+  // https://atcoder.jp/contests/awc0001/submissions/80223325 （const修飾子がまだついていないバージョン）
 
   int n, k;
   cin >> n >> k;

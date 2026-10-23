@@ -10,23 +10,23 @@ constexpr int INF = 1001001001;
 // 単調スタック
 // 以下で、vは値、pは位置
 // コンストラクタ : MonoStack(); : 準備、O(1)
-// pair<T,int> emplace(T v, int p) : 単調スタックとして、直前の値を返しながら{v,p}を追加、償却O(1)
+// pair<T,int> emplace(const T& v, int p) : 単調スタックとして、直前の値を返しながら{v,p}を追加、償却O(1)
 // 全消しした場合は{e(),-1}が返る
 // ※ compare()の内容はfirstの比較でaを消す条件に書き換えること
 // ※ e()は番兵としてその判定で全てに勝てるものを返すこと
 template<class T>
-bool compare(T a, T b) {
+bool compare(const T& a, const T& b) {
   return (a<=b);
 }
 template<class T>
 T e() {
   return INF;
 }
-template<class T, bool(*compare)(T,T) = compare<T>, T(*e)() = e<T>>
+template<class T, bool(*compare)(const T&,const T&) = compare<T>, T(*e)() = e<T>>
 struct MonoStack {
   deque<pair<T,int>> que;
   MonoStack() {que.emplace_back(e(),-1);}
-  pair<T,int> emplace(T v, int p) {
+  pair<T,int> emplace(const T& v, int p) {
     while (compare(que.back().first,v)) que.pop_back();
     pair<T,int> result = que.back();
     que.emplace_back(v,p);
@@ -39,7 +39,7 @@ int main () {
 
   // ABC359E Water Tank での使用例
   // https://atcoder.jp/contests/abc359/tasks/abc359_e
-  // https://atcoder.jp/contests/abc359/submissions/80223256
+  // https://atcoder.jp/contests/abc359/submissions/80223256 （const修飾子がまだついていないバージョン）
 
   int n;
   cin >> n;

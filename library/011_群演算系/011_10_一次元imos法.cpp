@@ -8,23 +8,23 @@ using namespace std;
 // 一次元imos法（和ならただの階差数列）
 // 以下で、nは配列の長さ、lとrとpはindex
 // コンストラクタ : Imos(int n); : その長さで準備、O(N)
-// void apply(int l, int r, T x) : 区間[l,r)にxを演算する、build()前のみ、O(1)
+// void apply(int l, int r, const T& x) : 区間[l,r)にxを演算する、build()前のみ、O(1)
 // void build() : 累積演算をして値を返す準備、O(N)
 // T get(int p) : 位置pでの値を返す、O(1)
 // ※ op()の内容は任意の可換群に編集可（inv(a,b)=a^(-1)*bとe()の編集も必要）
 template<class T>
-T op(T a, T b) {
+T op(const T& a, const T& b) {
   return a+b;
 }
 template<class T>
-T inv(T a, T b) {
+T inv(const T& a, const T& b) {
   return b-a;
 }
 template<class T>
 T e() {
   return 0;
 }
-template<class T, T(*op)(T,T) = op<T>, T(*inv)(T,T) = inv<T>, T(*e)() = e<T>>
+template<class T, T(*op)(const T&,const T&) = op<T>, T(*inv)(const T&,const T&) = inv<T>, T(*e)() = e<T>>
 struct Imos {
   bool built = false;
   int n;
@@ -34,7 +34,7 @@ struct Imos {
     n = n_;
     values.assign(n,e());
   }
-  void apply(int l, int r, T x) {
+  void apply(int l, int r, const T& x) {
     assert(!built&&0<=l&&l<n&&l<=r&&r<=n);
     values[l] = op(values[l],x);
     if (r<n) values[r] = inv(x,values[r]);
@@ -44,7 +44,7 @@ struct Imos {
     built = true;
     for (int i=0; i<n-1; i++) values[i+1] = op(values[i],values[i+1]);
   }
-  T get(int p) {
+  T get(int p) const {
     assert(built&&0<=p&&p<n);
     return values[p];
   }
@@ -55,7 +55,7 @@ int main () {
 
   // ABC014C AtColor での使用例（こんなものを用いなくても普通に解ける）
   // https://atcoder.jp/contests/abc014/tasks/abc014_3
-  // https://atcoder.jp/contests/abc014/submissions/80223055
+  // https://atcoder.jp/contests/abc014/submissions/80223055 （const修飾子がまだついていないバージョン）
 
   int n;
   cin >> n;

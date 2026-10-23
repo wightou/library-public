@@ -8,23 +8,23 @@ using namespace std;
 // 二次元imos法
 // 以下で、hとwはグリッドサイズ、uとdとlとrとcはindex
 // コンストラクタ : Imos2D(int h, int w); : その行数と列数で準備、O(HW)
-// void apply(int u, int l, int d, int r, T x)  : [u,d)×[l,r)にxを演算する、build()前のみ、O(1)
+// void apply(int u, int l, int d, int r, const T& x)  : [u,d)×[l,r)にxを演算する、build()前のみ、O(1)
 // void build() : 累積演算をして値を返す準備、O(HW)
 // T get(int r, int c) : 位置(r,c)での値を返す、O(1)
 // ※ op()の内容は任意の可換群に編集可（inv(a,b)=a^(-1)*bとe()の編集も必要）
 template<class T>
-T op(T a, T b) {
+T op(const T& a, const T& b) {
   return a+b;
 }
 template<class T>
-T inv(T a, T b) {
+T inv(const T& a, const T& b) {
   return b-a;
 }
 template<class T>
 T e() {
   return 0;
 }
-template<class T, T(*op)(T,T) = op<T>, T(*inv)(T,T) = inv<T>, T(*e)() = e<T>>
+template<class T, T(*op)(const T&,const T&) = op<T>, T(*inv)(const T&,const T&) = inv<T>, T(*e)() = e<T>>
 struct Imos2D {
   bool built = false;
   int h, w;
@@ -34,7 +34,7 @@ struct Imos2D {
     h = h_; w = w_;
     values.assign(h,vector<T>(w,e()));
   }
-  void apply(int u, int l, int d, int r, T x) {
+  void apply(int u, int l, int d, int r, const T& x) {
     assert(!built&&0<=u&&u<h&&u<=d&&d<=h&&0<=l&&l<w&&l<=r&&r<=w);
     values[u][l] = op(values[u][l],x);
     if (r<w) values[u][r] = inv(x,values[u][r]);
@@ -47,7 +47,7 @@ struct Imos2D {
     for (int i=0; i<h-1; i++) for (int j=0; j<w; j++) values[i+1][j] = op(values[i][j],values[i+1][j]);
     for (int i=0; i<h; i++) for (int j=0; j<w-1; j++) values[i][j+1] = op(values[i][j],values[i][j+1]);
   }
-  T get(int r, int c) {
+  T get(int r, int c) const {
     assert(built&&0<=r&&r<h&&0<=c&&c<w);
     return values[r][c];
   }
@@ -58,7 +58,7 @@ int main () {
 
   // 典型90問028 Cluttered Paper での使用例（こんなものを用いなくても普通の二次元累積和で解ける）
   // https://atcoder.jp/contests/typical90/tasks/typical90_ab
-  // https://atcoder.jp/contests/typical90/submissions/80223110
+  // https://atcoder.jp/contests/typical90/submissions/80223110 （const修飾子がまだついていないバージョン）
 
   int n;
   cin >> n;

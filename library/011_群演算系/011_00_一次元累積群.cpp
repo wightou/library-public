@@ -11,18 +11,18 @@ using namespace std;
 // T prod(int l, int r) : [l,r) の区間処理結果を返す、O(1)
 // ※ op()の内容は任意の群（非可換でも可）に編集可（inv(a,b)=a^(-1)*bとe()の編集も必要）
 template<class T>
-T op(T a, T b) {
+T op(const T& a, const T& b) {
   return a+b;
 }
 template<class T>
-T inv(T a, T b) {
+T inv(const T& a, const T& b) {
   return b-a;
 }
 template<class T>
 T e() {
   return 0;
 }
-template<class T, T(*op)(T,T) = op<T>, T(*inv)(T,T) = inv<T>, T(*e)() = e<T>>
+template<class T, T(*op)(const T&,const T&) = op<T>, T(*inv)(const T&,const T&) = inv<T>, T(*e)() = e<T>>
 struct Accumulation {
   int n;
   vector<T> values;
@@ -31,7 +31,7 @@ struct Accumulation {
     values.assign(n,e());
     for (int i=0; i<n-1; i++) values[i+1] = op(values[i],vec[i]);
   }
-  T prod(int l, int r) {
+  T prod(int l, int r) const {
     assert(0<=l&&l<=r&&r<n);
     return inv(values[l],values[r]);
   }
@@ -42,7 +42,7 @@ int main () {
 
   // 典型90問010 Score Sum Queries での使用例（こんなものを用いなくても普通の累積和で解ける）
   // https://atcoder.jp/contests/typical90/tasks/typical90_j
-  // https://atcoder.jp/contests/typical90/submissions/80222922
+  // https://atcoder.jp/contests/typical90/submissions/80222922 （const修飾子がまだついていないバージョン）
 
   int n;
   cin >> n;
