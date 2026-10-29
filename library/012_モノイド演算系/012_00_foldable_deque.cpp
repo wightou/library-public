@@ -4,7 +4,7 @@ using namespace std;
 constexpr int INF = 1001001001;
 
 // name: Foldable Deque
-// prefix: fnfolderble
+// prefix: fnfoldable
 // description: 累積保持deque
 // cpp.json from here
 // Foldable Deque
@@ -86,7 +86,7 @@ int main () {
 
   // ABC352D Permutation Subsequence での使用例
   // https://atcoder.jp/contests/abc352/tasks/abc352_d
-  // https://atcoder.jp/contests/abc352/submissions/80449609
+  // https://atcoder.jp/contests/abc352/submissions/80466457
 
   int n, k;
   cin >> n >> k;
