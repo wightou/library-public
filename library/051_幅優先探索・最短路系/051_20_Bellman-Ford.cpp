@@ -62,7 +62,7 @@ vector<long long> bellman_ford(const vector<vector<pair<T,int>>>& graph, const v
 
 int main () {
 
-  // ABC061D Score Attack
+  // ABC061D Score Attack での使用例
   // https://atcoder.jp/contests/abc061/tasks/abc061_d
   // https://atcoder.jp/contests/abc061/submissions/80466359
 

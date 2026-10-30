@@ -45,7 +45,7 @@ tuple<vector<int>,vector<int>,vector<vector<int>>,vector<int>> bfs(const vector<
 
 int main () {
 
-  // ABC168D Double Dots
+  // ABC168D Double Dots での使用例
   // https://atcoder.jp/contests/abc168/tasks/abc168_d
   // https://atcoder.jp/contests/abc168/submissions/80466395
 

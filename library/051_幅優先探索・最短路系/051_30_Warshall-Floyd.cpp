@@ -29,7 +29,7 @@ void warshall_floyd(vector<vector<T>>& d) {
 
 int main () {
 
-  // ABC012 D バスと避けられない運命
+  // ABC012 D バスと避けられない運命 での使用例
   // https://atcoder.jp/contests/abc012/tasks/abc012_4
   // https://atcoder.jp/contests/abc012/submissions/80478377
 

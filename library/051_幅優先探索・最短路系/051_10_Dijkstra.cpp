@@ -35,7 +35,7 @@ vector<long long> dijkstra(const vector<vector<pair<T,int>>>& graph, const vecto
 
 int main () {
 
-  // ABC340D Super Takahashi Bros.
+  // ABC340D Super Takahashi Bros. での使用例
   // https://atcoder.jp/contests/abc340/tasks/abc340_d
   // https://atcoder.jp/contests/abc340/submissions/80466368
 

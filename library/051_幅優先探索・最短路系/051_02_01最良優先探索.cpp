@@ -44,7 +44,7 @@ vector<int> bfs01(const vector<vector<pair<int,int>>>& graph, const vector<int>&
 
 int main () {
 
-  // ABC481D Autopilot
+  // ABC481D Autopilot での使用例
   // https://atcoder.jp/contests/abc481/tasks/abc481_d
   // https://atcoder.jp/contests/abc481/submissions/80466387
 

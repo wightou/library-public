@@ -36,7 +36,7 @@ vector<int> bfs(const vector<vector<int>>& graph, const vector<int>& starts) {
 
 int main () {
 
-  // ABC007C 幅優先探索
+  // ABC007C 幅優先探索 での使用例
   // https://atcoder.jp/contests/abc007/tasks/abc007_3
   // https://atcoder.jp/contests/abc007/submissions/80466400
 
