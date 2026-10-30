@@ -1241,7 +1241,7 @@
     "description": "二次元imos法"
   },
   "Foldable Deque": {
-    "prefix": "fnfolderble",
+    "prefix": "fnfoldable",
     "body": [
       "// Foldable Deque",
       "// 以下で、vは値、nは要素数",
@@ -2168,6 +2168,30 @@
       "}"
     ],
     "description": "負辺を含むグラフの多始点最短距離・負閉路の影響判定"
+  },
+  "Warshall-Floyd法": {
+    "prefix": "fnwarshallfloyd",
+    "body": [
+      "// Warshall-Floyd法（負辺対応、負閉路の影響処理なし）",
+      "// 以下で、dはn×nの距離行列、nは頂点数",
+      "// void warshall_floyd(vector<vector<T>>& d) : 全頂点対の最短距離をdに上書きする、O(N^3)、追加空間O(1)",
+      "// ※ d[i][i]は0、辺がない頂点対はINF、辺がある場合はその重み（多重辺は最小値）で初期化する",
+      "// ※ 負閉路がある場合、負閉路の影響を受ける頂点対の最短距離は正しく求められない",
+      "// ※ 計算後、d[v][v]<0となる頂点が1つでもあれば負閉路が存在する",
+      "// ※ INFは有限の経路コストより十分大きく、距離の加算でTがオーバーフローしないことが必要",
+      "template<class T>",
+      "void warshall_floyd(vector<vector<T>>& d) {",
+      "  int n = d.size();",
+      "  for (int k=0; k<n; k++) {",
+      "    for (int i=0; i<n; i++) {",
+      "      for (int j=0; j<n; j++) {",
+      "        if (d[i][k]!=INF&&d[k][j]!=INF) d[i][j] = min(d[i][j],d[i][k]+d[k][j]);",
+      "      }",
+      "    }",
+      "  }",
+      "}"
+    ],
+    "description": "全頂点対の最短距離（負辺対応）"
   },
   "累乗mod": {
     "prefix": "fnpowermod",
