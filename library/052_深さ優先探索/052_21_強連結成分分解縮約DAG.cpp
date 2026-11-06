@@ -77,7 +77,7 @@ pair<vector<vector<int>>,vector<vector<int>>> scc_dag(const vector<vector<int>>&
 
 int main () {
 
-  // ABC245 F Endless Walk
+  // ABC245F Endless Walk
   // https://atcoder.jp/contests/abc245/tasks/abc245_f
   // https://atcoder.jp/contests/abc245/submissions/80633012
 
