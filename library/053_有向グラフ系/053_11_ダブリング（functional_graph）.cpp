@@ -46,7 +46,7 @@ struct Doubling {
 
 int main () {
 
-  // ABC167 D Teleporter
+  // ABC167D Teleporter
   // https://atcoder.jp/contests/abc167/tasks/abc167_d
   // https://atcoder.jp/contests/abc167/submissions/80798150
 

@@ -113,7 +113,7 @@ struct FenwickTree2D {
 
 int main () {
 
-  // ABC106 D AtCoder Express 2 での使用例（こんなものを用いなくても普通の二次元累積和で解ける）
+  // ABC106D AtCoder Express 2 での使用例（こんなものを用いなくても普通の二次元累積和で解ける）
   // https://atcoder.jp/contests/abc106/tasks/abc106_d
   // https://atcoder.jp/contests/abc106/submissions/80241821 （const修飾子がまだついていないバージョン）
 
