@@ -57,7 +57,7 @@ struct Compression {
 
 int main () {
   
-  // ABC036C - 座圧 での使用例
+  // ABC036C 座圧 での使用例
   // https://atcoder.jp/contests/abc036/tasks/abc036_c
   // https://atcoder.jp/contests/abc036/submissions/80241800 （const修飾子がまだついていないバージョン）
 

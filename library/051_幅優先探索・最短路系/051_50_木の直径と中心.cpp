@@ -31,7 +31,7 @@ vector<int> bfs(const vector<vector<int>>& graph, const vector<int>& starts) {
 
 int main () {
 
-  // 典型90問 003 Longest Circular Road
+  // 典型90問 003 Longest Circular Road での使用例
   // https://atcoder.jp/contests/typical90/tasks/typical90_c
   // https://atcoder.jp/contests/typical90/submissions/80632928
 

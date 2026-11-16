@@ -30,7 +30,7 @@ vector<int> primes_list (int n) {
 
 int main () {
 
-  // 競技プログラミングの鉄則B26 Output Prime Numbers での使用例
+  // 競技プログラミングの鉄則 B26 Output Prime Numbers での使用例
   // https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cy
   // https://atcoder.jp/contests/tessoku-book/submissions/80412135
 

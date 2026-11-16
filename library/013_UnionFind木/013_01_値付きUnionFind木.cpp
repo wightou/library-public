@@ -80,7 +80,7 @@ struct UnionFind {
 
 int main () {
 
-  // ARC106Bでの使用例
+  // ARC106B Values での使用例
   // https://atcoder.jp/contests/arc106/tasks/arc106_b
   // https://atcoder.jp/contests/arc106/submissions/80079827
 

@@ -51,7 +51,7 @@ vector<int> scc(const vector<vector<int>>& graph) {
 
 int main () {
 
-  // 典型90問 021 Come Back in One Piece
+  // 典型90問 021 Come Back in One Piece での使用例
   // https://atcoder.jp/contests/typical90/tasks/typical90_u
   // https://atcoder.jp/contests/typical90/submissions/80632986
 

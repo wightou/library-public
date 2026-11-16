@@ -48,7 +48,7 @@ pair<vector<int>,vector<int>> loop_detection(const vector<int>& t) {
 
 int main () {
 
-  // ABC357 E Reachability in Functional Graph
+  // ABC357E Reachability in Functional Graph での使用例
   // https://atcoder.jp/contests/abc357/tasks/abc357_e
   // https://atcoder.jp/contests/abc357/submissions/80638744
 

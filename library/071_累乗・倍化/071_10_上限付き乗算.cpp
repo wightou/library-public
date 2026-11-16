@@ -25,7 +25,7 @@ long long prod (long long x, long long y) {
 
 int main () {
 
-  // ABC169B - Multiplication 2 での使用例
+  // ABC169B Multiplication 2 での使用例
   // https://atcoder.jp/contests/abc169/tasks/abc169_b
   // https://atcoder.jp/contests/abc169/submissions/80280135
 

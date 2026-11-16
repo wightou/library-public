@@ -64,7 +64,7 @@ struct UnionFind {
 
 int main () {
 
-  // ABC288Cでの使用例
+  // ABC288C Don’t be cycle での使用例
   // https://atcoder.jp/contests/abc288/tasks/abc288_c
   // https://atcoder.jp/contests/abc288/submissions/80079936
 

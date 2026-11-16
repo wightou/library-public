@@ -72,7 +72,7 @@ struct UnionFind {
 
 int main () {
 
-  // ABC087/ARC090 Dでの使用例（もっと簡単にも解ける）
+  // ABC087D/ARC090D People on a Line での使用例（もっと簡単にも解ける）
   // https://atcoder.jp/contests/arc090/tasks/arc090_b
   // https://atcoder.jp/contests/arc090/submissions/80080965
 

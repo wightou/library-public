@@ -33,7 +33,7 @@ vector<int> topological_sort_min(const vector<vector<int>>& graph) {
 
 int main () {
 
-  // ABC223D Restricted Permutation
+  // ABC223D Restricted Permutation での使用例
   // https://atcoder.jp/contests/abc223/tasks/abc223_d
   // https://atcoder.jp/contests/abc223/submissions/80798749
 

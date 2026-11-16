@@ -46,7 +46,7 @@ struct Doubling {
 
 int main () {
 
-  // ABC167D Teleporter
+  // ABC167D Teleporter での使用例
   // https://atcoder.jp/contests/abc167/tasks/abc167_d
   // https://atcoder.jp/contests/abc167/submissions/80798150
 

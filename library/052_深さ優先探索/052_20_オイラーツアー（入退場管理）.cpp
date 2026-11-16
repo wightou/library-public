@@ -45,7 +45,7 @@ tuple<vector<int>,vector<int>,vector<int>> euler_tour_io(const vector<vector<int
 
 int main () {
 
-  // ABC187E Through Path
+  // ABC187E Through Path での使用例
   // https://atcoder.jp/contests/abc187/tasks/abc187_e
   // https://atcoder.jp/contests/abc187/submissions/80634651
 
