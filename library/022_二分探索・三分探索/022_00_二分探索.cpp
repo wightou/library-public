@@ -36,7 +36,7 @@ T bin_search(T inside, T outside, Args&&... args) {
 
 int main () {
 
-  // ABC146 C - Buy an Integer
+  // ABC146C - Buy an Integer
   // https://atcoder.jp/contests/abc146/tasks/abc146_c
   // https://atcoder.jp/contests/abc146/submissions/80897100
 
