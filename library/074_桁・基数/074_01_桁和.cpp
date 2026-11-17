@@ -23,7 +23,7 @@ int main () {
 
   // ABC083B Some Sums での使用例
   // https://atcoder.jp/contests/abc083/tasks/abc083_b
-  //
+  // https://atcoder.jp/contests/abc083/submissions/80911391
 
   int n, a, b;
   cin >> n >> a >> b;

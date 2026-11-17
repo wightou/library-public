@@ -3399,6 +3399,43 @@
     ],
     "description": "篩によるトーシェント関数"
   },
+  "桁数": {
+    "prefix": "fndigitcount",
+    "body": [
+      "// 桁数（10進・k進）",
+      "// long long digit_count(long long n, long long k = 10) : nのk進法での桁数を返す、O(log(n+1))",
+      "// ※ n>0、k>=2",
+      "long long digit_count(long long n, long long k = 10) {",
+      "  assert(k>=2);",
+      "  assert(n>0);",
+      "  long long result = 0;",
+      "  while (n>0) {",
+      "    result++;",
+      "    n /= k;",
+      "  }",
+      "  return result;",
+      "}"
+    ],
+    "description": "10進・k進表記の整数の桁数"
+  },
+  "桁和": {
+    "prefix": "fndigitsum",
+    "body": [
+      "// 桁和（10進・k進）",
+      "// long long digit_sum(long long n, long long k = 10) : nのk進法での各桁の和を返す、O(log(n+1))",
+      "long long digit_sum(long long n, long long k = 10) {",
+      "  assert(k>=2);",
+      "  assert(n>=0);",
+      "  long long result = 0;",
+      "  while (n>0) {",
+      "    result += n%k;",
+      "    n /= k;",
+      "  }",
+      "  return result;",
+      "}"
+    ],
+    "description": "10進・k進表記の整数の桁和"
+  },
   "平方数判定": {
     "prefix": "fnsquare",
     "body": [
