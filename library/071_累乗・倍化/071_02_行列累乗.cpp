@@ -60,7 +60,7 @@ int main () {
 
   // アルゴリズムと数学054 Fibonacci Hard での使用例
   // https://atcoder.jp/contests/math-and-algorithm/tasks/math_and_algorithm_at
-  // 
+  // https://atcoder.jp/contests/math-and-algorithm/submissions/80263164
 
   long long n;
   cin >> n;
