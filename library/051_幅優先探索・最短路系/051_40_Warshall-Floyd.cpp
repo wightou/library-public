@@ -16,7 +16,7 @@ constexpr int INF = 1001001001;
 // ※ INFは有限の経路コストより十分大きく、距離の加算でTがオーバーフローしないことが必要
 template<class T>
 void warshall_floyd(vector<vector<T>>& d) {
-  int n = d.size();
+  int n = ssize(d);
   for (int k=0; k<n; k++) {
     for (int i=0; i<n; i++) {
       for (int j=0; j<n; j++) {

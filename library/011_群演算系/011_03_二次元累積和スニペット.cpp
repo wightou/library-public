@@ -18,10 +18,10 @@ int main () {
   }
   // cpp.json to here
 
-  for (size_t j=0; j<sum.size(); j++) {
-    for (size_t i=0; i<sum.at(j).size(); i++) {
+  for (int j=0; j<ssize(sum); j++) {
+    for (int i=0; i<ssize(sum.at(j)); i++) {
       cout << sum.at(j).at(i);
-      if (i!=sum.at(j).size()-1) {
+      if (i!=ssize(sum.at(j))-1) {
         cout << " ";
       }
     }

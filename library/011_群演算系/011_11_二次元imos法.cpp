@@ -88,7 +88,7 @@ int main () {
     }
   }
 
-  for (size_t i=1; i<result.size(); i++) {
+  for (int i=1; i<ssize(result); i++) {
     cout << result.at(i) << endl;
   }
 

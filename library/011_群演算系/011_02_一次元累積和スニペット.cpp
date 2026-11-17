@@ -14,9 +14,9 @@ int main () {
   partial_sum(a.begin(),a.end(),sum.begin()+1);  // snippet-replace: partial_sum(${2:a}.begin(),${2}.end(),${1}.begin()+1);
   // cpp.json to here
 
-  for (size_t i=0; i<sum.size(); i++) {
+  for (int i=0; i<ssize(sum); i++) {
     cout << sum.at(i);
-    if (i!=sum.size()-1) {
+    if (i!=ssize(sum)-1) {
       cout << " ";
     }
   }

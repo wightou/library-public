@@ -65,7 +65,7 @@ int main () {
   auto [distances,parents,children,order] = bfs(graph,{0});
 
   cout << "Yes" << endl;
-  for (size_t i=1; i<parents.size(); i++) {
+  for (int i=1; i<ssize(parents); i++) {
     cout << parents.at(i)+1 << endl;
   }
 

@@ -17,10 +17,10 @@ constexpr int mod = 1000000000;
 // ※ doubling()のpは非負であること
 vector<vector<long long>> prod(const vector<vector<long long>>& x, const vector<vector<long long>>& y) {
   assert(!x.empty()&&!y.empty());
-  int n1 = x.size();
-  int n2 = x.at(0).size();
-  assert(n2>0&&(int)y.size()==n2);
-  int n3 = y.at(0).size();
+  int n1 = ssize(x);
+  int n2 = ssize(x.at(0));
+  assert(n2>0&&ssize(y)==n2);
+  int n3 = ssize(y.at(0));
   assert(n3>0);
   vector<vector<long long>> z(n1,vector<long long>(n3,0));
   for (int i=0; i<n1; i++) {
@@ -43,9 +43,9 @@ vector<vector<long long>> e(int n) {
 }
 vector<vector<long long>> doubling(const vector<vector<long long>>& a, long long p) {
   assert(p>=0);
-  assert(!a.empty()&&a.size()==a.at(0).size());
+  assert(!a.empty()&&ssize(a)==ssize(a.at(0)));
   if (p==0) {
-    return e(a.size());
+    return e(ssize(a));
   } else if (p%2==0) {
     vector<vector<long long>> tmp = doubling(a,p/2);
     return prod(tmp,tmp);

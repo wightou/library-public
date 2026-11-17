@@ -60,7 +60,7 @@ int main () {
 
   vector<long long> divs = divisors(n,true);
 
-  for (size_t i=0; i<divs.size(); i++) {
+  for (int i=0; i<ssize(divs); i++) {
     cout << divs.at(i) << endl;
   }
 

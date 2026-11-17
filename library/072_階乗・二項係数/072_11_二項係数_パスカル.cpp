@@ -15,7 +15,7 @@ vector<vector<int>> comb_data;
 int comb(int n, int r) {
   if (r<0) return 0;
   if (r>n) return 0;
-  int s = comb_data.size();
+  int s = ssize(comb_data);
   if (s<=n) {
     comb_data.resize(n+1);
     if (s==0) {
@@ -53,10 +53,10 @@ int main () {
     }
   }
 
-  for (size_t j=0; j<result.size(); j++) {
-    for (size_t i=0; i<result.at(j).size(); i++) {
+  for (int j=0; j<ssize(result); j++) {
+    for (int i=0; i<ssize(result.at(j)); i++) {
       cout << result.at(j).at(i);
-      if (i!=result.at(j).size()-1) {
+      if (i!=ssize(result.at(j))-1) {
         cout << " ";
       }
     }

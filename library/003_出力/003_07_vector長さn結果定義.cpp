@@ -12,7 +12,7 @@ int main () {
   vector<int> result(n);  // snippet-replace: vector<${1|int,long long,double,bool,string,pair<int\,int>,pair<long long\,long long>|}> ${2:result}(${3:n});
   // cpp.json to here
 
-  cout << result.size() << '\n';
+  cout << ssize(result) << '\n';
 
   return 0;
 }

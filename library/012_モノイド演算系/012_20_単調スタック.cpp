@@ -61,9 +61,9 @@ int main () {
     dp.at(i) += 1LL*h.at(i)*(i-p);
   }
 
-  for (size_t i=0; i<dp.size(); i++) {
+  for (int i=0; i<ssize(dp); i++) {
     cout << dp.at(i)+1;
-    if (i!=dp.size()-1) {
+    if (i!=ssize(dp)-1) {
       cout << " ";
     }
   }
