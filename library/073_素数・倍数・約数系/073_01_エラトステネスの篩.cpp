@@ -26,7 +26,7 @@ vector<bool> eratosthenes (int n) {
 
 int main () {
 
-  // 競技プログラミングの鉄則A26 Prime Check での使用例
+  // 競技プログラミングの鉄則 A26 Prime Check での使用例
   // https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_z
   // https://atcoder.jp/contests/tessoku-book/submissions/80394389
 
