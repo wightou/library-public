@@ -34,7 +34,7 @@ vector<int> topological_sort(const vector<vector<int>>& graph) {
 
 int main () {
 
-  // Educational DP Contest G Longest Path  での使用例
+  // Educational DP Contest G Longest Path での使用例
   // https://atcoder.jp/contests/dp/tasks/dp_g
   // https://atcoder.jp/contests/dp/submissions/80798625
 

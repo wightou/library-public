@@ -45,7 +45,7 @@ bool is_prime (unsigned long long n) {
 
 int main () {
 
-  // AWC0121 円形ネックレス での使用例
+  // AWC0121C 円形ネックレス での使用例
   // https://atcoder.jp/contests/awc0121/tasks/awc0121_c
   // https://atcoder.jp/contests/awc0121/submissions/80412124
 

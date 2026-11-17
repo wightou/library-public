@@ -107,7 +107,7 @@ struct LCAEuler {
 
 int main () {
 
-  // ABC014 D 閉路 での使用例
+  // ABC014D 閉路 での使用例
   // https://atcoder.jp/contests/abc014/tasks/abc014_4
   // https://atcoder.jp/contests/abc014/submissions/80638758
 
