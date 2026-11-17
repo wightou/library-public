@@ -20,7 +20,7 @@ vector<T> lis(const vector<T>& original) {
     if (len[i]==ssize(vec)) vec.emplace_back(original[i]);
     else vec[len[i]] = original[i];
   }
-  vector<T> result(vec.size());
+  vector<T> result(ssize(vec));
   int idx = ssize(vec)-1;
   for (int i=n-1; i>=0; i--) {
     if (len[i]==idx) {
