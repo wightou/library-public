@@ -108,6 +108,15 @@ def rewrite_line(line, path, line_number):
     return indent + replacement
 
 
+def remove_common_indent(lines):
+    """Remove common leading ASCII spaces from nonblank lines; preserve relative indentation."""
+    indent = min(
+        (len(line) - len(line.lstrip(" ")) for line in lines if line.strip()),
+        default=0,
+    )
+    return [line[indent:] if line.strip() else "" for line in lines]
+
+
 def read_snippets(path):
     lines = read_utf8(path).splitlines()
     entries = []
@@ -164,7 +173,12 @@ def generate(root, library_path, manual_path):
                     f"prefix {prefix!r} が重複しています: "
                     f"{prefix_owner[prefix]} / {origin}"
                 )
-        entries[name] = entry
+        body = entry["body"]
+        if isinstance(body, str):
+            body = "\n".join(remove_common_indent(body.split("\n")))
+        else:
+            body = remove_common_indent(body)
+        entries[name] = {**entry, "body": body}
         for prefix in prefixes:
             prefix_owner[prefix] = origin
 
