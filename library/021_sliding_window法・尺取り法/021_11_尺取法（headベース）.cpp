@@ -9,7 +9,7 @@ using namespace std;
 // vector<int> shakutori_detail<judge,add,remove>(int n, State& state, Args&&... args)
 //   各headに対し、条件を満たす最小の左端result[head]を返す（区間は[result[head],head+1)）
 // long long shakutori<judge,add,remove>(int n, State& state, Args&&... args)
-//   上記の左端配列を集計して返す（現在は条件を満たす区間の最大長）
+//   上記の左端配列を集計して返す
 // 計算量：O(N×(各操作の計算量の最大値))（judge、add、removeがO(1)ならO(N)）
 // ※ stateは空区間を表す状態に初期化して渡す
 // ※ add(head,state,args...)は右端の要素headを追加する

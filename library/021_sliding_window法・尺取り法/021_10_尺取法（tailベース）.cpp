@@ -9,7 +9,7 @@ using namespace std;
 // vector<int> shakutori_detail<judge,add,remove>(int n, State& state, Args&&... args)
 //   各tailに対し、条件を満たす最大の半開区間[tail,result[tail])の右端を返す
 // long long shakutori<judge,add,remove>(int n, State& state, Args&&... args)
-//   上記の右端配列を集計して返す（現在は条件を満たす区間の最大長）
+//   上記の右端配列を集計して返す
 // 計算量：O(N×(各操作の計算量の最大値))（judge、add、removeがO(1)ならO(N)）
 // ※ stateは空区間を表す状態に初期化して渡す
 // ※ judge(head,state,args...)は、現在の区間に要素headを追加しても条件を満たすか判定する（stateは変更しない）
