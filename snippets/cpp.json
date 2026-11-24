@@ -94,6 +94,16 @@
     "prefix": "viota",
     "body": "iota(${1:vec}.begin(),${1}.end(),0$0);"
   },
+  "順列全探索の短縮入力": {
+    "prefix": "vperm",
+    "body": [
+      "vector<int> vec(${1:n});",
+      "iota(vec.begin(),vec.end(),0);",
+      "do {",
+      "  $0",
+      "} while (next_permutation(vec.begin(), vec.end()));"
+    ]
+  },
   "vectorの総和の短縮入力": {
     "prefix": "vsum",
     "body": [
@@ -1559,7 +1569,7 @@
       "// bool same(int u, int v) : uとvが連結かどうかを返す、償却O(α(N))",
       "// int size(int u) : uが所属する成分の頂点数、償却O(α(N))",
       "// void add(int u, T x) : 頂点番号uを含む成分の集約値にxを加える、償却O(α(N))",
-      "// void add(int u, int v, T x) : 頂点番号[u,v)の範囲の値にxを加える、償却O((v-u)α(N))",
+      "// void add(int u, int v, T x) : 頂点番号[u,v)の範囲の値にadd操作をする、償却O((v-u)α(N))",
       "// void set(int u, T x) : 頂点番号uを含む成分の集約値をxに変更する、償却O(α(N))",
       "// T get(int u) : 頂点番号uの所属する成分の値集約結果を返す、償却O(α(N))",
       "// vector<int> leaders() : 自身がリーダーになっているもの一覧を返す、O(N)",

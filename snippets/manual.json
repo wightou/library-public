@@ -118,6 +118,17 @@
     "body": "iota(${1:vec}.begin(),${1}.end(),0$0);"
   },
 
+  "順列全探索の短縮入力": {
+    "prefix": "vperm",
+    "body": [
+      "vector<int> vec(${1:n});",
+      "iota(vec.begin(),vec.end(),0);",
+      "do {",
+      "  $0",
+      "} while (next_permutation(vec.begin(), vec.end()));"
+    ]
+  },
+
   "vectorの総和の短縮入力": {
     "prefix": "vsum",
     "body": [
