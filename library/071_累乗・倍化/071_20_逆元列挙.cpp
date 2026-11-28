@@ -4,7 +4,7 @@ using namespace std;
 constexpr int mod = 998244353;
 
 // name: 逆元列挙
-// prefix: fninverselist
+// prefix: fninverse
 // description: 素数modにおける整数の乗法的逆元を必要に応じて列挙
 // cpp.json from here
 // 逆元列挙
@@ -38,7 +38,7 @@ int main () {
 
   // ABC263E Sugoroku 3 での使用例
   // https://atcoder.jp/contests/abc263/tasks/abc263_e
-  // https://atcoder.jp/contests/abc263/submissions/81111755
+  // https://atcoder.jp/contests/abc263/submissions/81111784
 
   int n;
   cin >> n;
